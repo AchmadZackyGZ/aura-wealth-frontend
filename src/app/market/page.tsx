@@ -33,7 +33,7 @@ export default function MarketTrendsPage() {
 
     try {
       const response = await fetch(
-        `http://localhost:8080/api/market/${symbol.toUpperCase()}`,
+        `https://aura-wealth-agent-production.up.railway.app/api/market/${symbol.toUpperCase()}`,
       );
       const json = await response.json();
 

@@ -38,14 +38,17 @@ export default function FinUICommandCenter() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8080/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          sessionId: sessionId,
-          message: userMsg.content,
-        }),
-      });
+      const response = await fetch(
+        "https://aura-wealth-agent-production.up.railway.app/api/chat",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            sessionId: sessionId,
+            message: userMsg.content,
+          }),
+        },
+      );
 
       const json = await response.json();
 
